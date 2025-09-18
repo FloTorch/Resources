@@ -1,0 +1,7 @@
+.env
+.venv/
+venv/
+__pycache__
+.DS_Store
+.vscode/
+loan_application_history.csv
