@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loan_underwriter"
+version = "1.0.0"
+description = "Loan underwriting pipeline with microservices (FastAPI + Streamlit + LangGraph + Flotorch)"
+authors = [
+  { name = "Adi Budithi", email = "adi.budithi@fissionlabs.com" },
+  { name = "Akhila Chiguluri", email = "akhila.chiguluri@fissionlabs.com" },
+  { name = "Satya Srikant Mantha", email = "satya.mantha@fissionlabs.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+  "pydantic",
+  "pydantic-settings",
+  "httpx",
+  "fastapi",
+  "uvicorn",
+  "openai",
+  "langgraph",
+  "langchain",
+  "langchain-core",
+  "flotorch[sdk]",
+  "streamlit",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff",
+  "pytest",
+  "mypy",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

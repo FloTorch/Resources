@@ -1,0 +1,37 @@
+name: loan_underwriter
+
+services:
+  frontend:
+    build: .
+    working_dir: /app
+    command: streamlit run frontend/app.py
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - backend
+    environment:
+      - PYTHONPATH=/app
+
+  backend:
+    build: .
+    command: uvicorn backend.app:app --host 0.0.0.0
+    ports:
+      - "8000:8000"
+    depends_on:
+    - loan_parser
+    - credit_analyzer
+    - risk_assessor
+  
+  loan_parser:
+    build: .
+    command: uvicorn agents.loan_parser.main:app --host 0.0.0.0
+
+  credit_analyzer:
+    build: .
+    command: uvicorn agents.credit_analyzer.main:app --host 0.0.0.0
+
+  risk_assessor:
+    build: .
+    command: uvicorn agents.risk_assessor.main:app --host 0.0.0.0
