@@ -9,10 +9,12 @@ This project implements an LLM-powered loan underwriting pipeline using:
 
 ---
 
-## Pre-requisities
+## Prerequisities
 
-1. Configure Flotorch model to be accessed via agents.
-2. Generate Flotorch gateway key. 
+1. Generate Flotorch gateway key.
+2. Configure Flotorch model to be accessed via agents.
+
+---
 
 ## 💡 Overview
 
@@ -33,25 +35,25 @@ Each role is:
 
 ```bash
 loan_underwriter/
-├── agents/
+├── agents/ # agent config
 │   ├── loan_parser/
 │   ├── credit_analyzer/
 │   └── risk_assessor/
 │
 ├── backend/
-│   └── app.py # FastAPI web server on Langgraph flow 
+│   └── app.py # FastAPI web server entry
 │
 ├── common/
-│   └── flotorch_chat_model.py # 
+│   └── flotorch_chat_model.py # LangChain wrapper for FloTorch
 │
 ├── data/
-│   └── loan_application_history.csv
+│   └── loan_application_history.csv # output data
 │
 ├── frontend/
-│   └── app.py # Uses Streamlit
+│   └── app.py # Streamlit UI
 │
 ├── langgraph_flow/
-│   └── graph.py
+│   └── graph.py # Agent orchestration graph
 │
 ├── .env
 └── README.md
@@ -71,11 +73,12 @@ loan_underwriter/
 
 ### 1. Set environment variables
 
-1. Make a copy of the `.env.example`, and update the keys. The following list is NOT exhaustive please refer to the latest `.env.example` file.
+1. Create a `.env` file.
+2. Copy the contents of `.env.example` and update the keys.
 
-#### `.env`
+(The following list is NOT exhaustive. Please refer to the latest `.env.example`.)
 
-```env
+```env {.env}
 FLOTORCH_API_KEY=<YOUR_FLOTORCH_API_KEY>    # for LLM access
 FLOTORCH_MODEL=<YOUR_FLOTORCH_MODEL>        # the model you created through FloTorch
 ```
