@@ -1,6 +1,6 @@
 # Resources
 
-FloTorch resources for example usage, industry applications, and more.
+FloTorch resources for usage, industry applications, and more.
 
 ## Getting Started
 
