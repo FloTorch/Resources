@@ -8,7 +8,7 @@ from config import settings
 
 
 FLOTORCH_API_KEY = settings.flotorch_api_key
-FLOTORCH_ENDPOINT = settings.flotorch_endpoint
+FLOTORCH_BASE_URL = settings.flotorch_base_url
 FLOTORCH_MODEL = settings.flotorch_model
 
 
@@ -18,7 +18,7 @@ class ChatFloTorch(BaseChatModel):
         client: Optional[FlotorchLLM] = None,
         *,
         api_key: str = FLOTORCH_API_KEY,
-        base_url: str = FLOTORCH_ENDPOINT,
+        base_url: str = FLOTORCH_BASE_URL,
         model_id: str = FLOTORCH_MODEL,
         default_params: Optional[dict[str, Any]] = None,
         **kwargs,

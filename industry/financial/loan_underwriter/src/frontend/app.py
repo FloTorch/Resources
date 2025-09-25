@@ -28,7 +28,7 @@ with st.form("loan_form"):
 
 # Create data folder
 from pathlib import Path
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)  # make sure data/ exists
 CSV_PATH = DATA_DIR / "loan_application_history.csv"
 
@@ -94,14 +94,19 @@ if submitted:
 
 # Function to color rows
 def highlight_result(row):
-    if row["Result"] == "Approved":
-        return ["background-color: #1c4c31"] * len(row)  # green
-    elif row["Result"] == "Denied":
-        return ["background-color: #572d31"] * len(row)  # red
-    elif row["Result"] == "Undetermined":
-        return ["background-color: #575115"] * len(row)  # yellow
-    else:
-        return [""] * len(row)  # no color
+    """
+    Highlight DataFrame rows with semi-transparent background colors
+    without altering the text color, suitable for both light and dark modes.
+    """
+    styles = {
+        "Approved": "rgba(76, 175, 80, 0.25)",       # soft green
+        "Denied": "rgba(244, 67, 54, 0.25)",         # soft red
+        "Undetermined": "rgba(255, 235, 59, 0.25)"   # soft yellow
+    }
+
+    bg_color = styles.get(row["Result"], "transparent")  # default transparent
+    return [f"background-color: {bg_color}"] * len(row)
+
 
 # Display history as table
 df = pd.DataFrame(st.session_state.history)

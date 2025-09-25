@@ -2,6 +2,7 @@ FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
+ENV PYTHONPATH=/app/src
 
 # Install build tools for packages that need compiling (optional, adjust if not needed)
 RUN apt-get update && apt-get install -y --no-install-recommends \

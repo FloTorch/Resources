@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     risk_assessor_url: str
     flotorch_api_key: str
     flotorch_model: str
-    flotorch_endpoint: str
+    flotorch_base_url: str
 
     class Config:
         env_file = ".env"
