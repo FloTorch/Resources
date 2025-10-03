@@ -45,3 +45,6 @@ htmlcov/
 
 # Docker
 *.dockerignore
+
+# Postman
+.postman_environment.json
