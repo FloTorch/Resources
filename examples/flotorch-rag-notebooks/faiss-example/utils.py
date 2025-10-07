@@ -8,6 +8,7 @@ from typing import List
 
 import PyPDF2
 from sentence_transformers import SentenceTransformer
+print("IMPORTED")
 import faiss
 from flotorch.sdk.llm import FlotorchLLM
 
