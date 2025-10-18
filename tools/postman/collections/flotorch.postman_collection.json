@@ -1,0 +1,741 @@
+{
+	"info": {
+		"_postman_id": "4faca7ff-e341-4743-8e9e-0fc4fdcf78b1",
+		"name": "FloTorch 🔥",
+		"description": "Interact with your FloTorch resources through our robust API.\n\nFind more information here:\n\n[Quickstart Docs](https://flotorch-docs.fissionlabs.workers.dev/) 🚀",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48033962"
+	},
+	"item": [
+		{
+			"name": "Models",
+			"item": [
+				{
+					"name": "Chat Completion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"flotorch/model\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"What is the capital of Norway?\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/chat/completions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"chat",
+								"completions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Embeddings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"model\": \"flotorch/titan-embedding\",\n  \"input\": \"Quick brown fox jumped over a lazy dog.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/embeddings",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"embeddings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vector Store Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"search query\",\n  \"top_k\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/openai/v1/vector_stores/:id/search",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"openai",
+								"v1",
+								"vector_stores",
+								":id",
+								"search"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agents",
+			"item": [
+				{
+					"name": "Get Agent Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/agents/:name",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"agents",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Memory",
+			"item": [
+				{
+					"name": "List Memories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"123\",\n  \"limit\": 10,\n  \"offset\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/list",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								"list"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": "openai"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Memory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"Memory content\",\n  \"metadata\": {\n    \"key\": \"value\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Memory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}api"
+							],
+							"path": [
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Memory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"Updated memory content\",\n  \"metadata\": {\n    \"key\": \"updated_value\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Memory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/:id",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								},
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Memories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"search term\",\n  \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/memory/:provider/memories/search",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"memory",
+								":provider",
+								"memories",
+								"search"
+							],
+							"variable": [
+								{
+									"key": "provider",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RAG",
+			"item": [
+				{
+					"name": "Generate with RAG",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"Your question\",\n  \"context\": \"Additional context\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/rag/:endpoint/generate",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rag",
+								":endpoint",
+								"generate"
+							],
+							"variable": [
+								{
+									"key": "endpoint",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MCP Tools",
+			"item": [
+				{
+					"name": "Execute MCP Operations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"operation\": \"tools/list\",\n  \"params\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/mcps/:name/proxy",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mcps",
+								":name",
+								"proxy"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "List Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"My Session\",\n  \"metadata\": {\n    \"key\": \"value\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Session",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Session Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"user_message\",\n  \"data\": {\n    \"message\": \"Hello\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/api/v1/sessions/:uid/events",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								":uid",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workflows",
+			"item": [
+				{
+					"name": "Fetch Workflow Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Workflow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": \"<string or json>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name/run",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name",
+								"run"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "loan-underwriter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Workflow Invocation Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flotorch_base_url}}/v1/workflows/:name/invocations/:invocation",
+							"host": [
+								"{{flotorch_base_url}}"
+							],
+							"path": [
+								"v1",
+								"workflows",
+								":name",
+								"invocations",
+								":invocation"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "invocation",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{flotorch_api_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
