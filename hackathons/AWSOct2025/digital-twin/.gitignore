@@ -1,0 +1,10 @@
+venv/
+.env
+streamlit_application.py
+pycache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
