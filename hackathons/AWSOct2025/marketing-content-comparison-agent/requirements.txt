@@ -1,0 +1,18 @@
+# core
+streamlit
+openai
+python-dotenv
+requests
+
+# evaluation & metrics
+textstat
+vaderSentiment
+rouge-score
+
+# optional (if you want to plug in OpenSearch / FloTorch)
+opensearch-py
+flotorch-core
+
+# misc
+pandas
+matplotlib
