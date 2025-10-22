@@ -1,0 +1,8 @@
+flotorch
+flotorch[strands]==2.1.0b1
+strands-agents
+strands-agents-tools
+strands-agents-builder
+pinecone
+pydantic
+streamlit
