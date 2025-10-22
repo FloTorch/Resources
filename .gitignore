@@ -45,3 +45,6 @@ htmlcov/
 
 # Docker
 *.dockerignore
+
+# WSL
+*:Zone.Identifier
