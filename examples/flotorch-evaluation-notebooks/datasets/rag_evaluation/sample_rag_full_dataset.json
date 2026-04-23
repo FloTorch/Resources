@@ -1,0 +1,21 @@
+{
+  "samples": [
+    {
+      "user_input": "What is RAG?",
+      "llm_response": "RAG stands for Retrieval-Augmented Generation.",
+      "contexts": [
+        "RAG combines retrieval with generation for grounded responses."
+      ],
+      "ground_truth": "Retrieval-Augmented Generation"
+    },
+    {
+      "user_input": "How does photosynthesis work?",
+      "llm_response": "Photosynthesis converts sunlight into energy using chlorophyll.",
+      "contexts": [
+        "Plants use chlorophyll to capture light.",
+        "Converts CO2 and water into glucose."
+      ],
+      "ground_truth": "Converts light into chemical energy"
+    }
+  ]
+}

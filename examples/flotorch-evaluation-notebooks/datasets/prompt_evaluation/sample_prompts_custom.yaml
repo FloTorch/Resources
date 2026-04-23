@@ -1,0 +1,7 @@
+prompts:
+  "1":
+    template: "Respond with empathy and understanding."
+  "2":
+    template: "Respond directly and professionally."
+  "3":
+    template: "Respond in a balanced tone, acknowledging concerns while staying solution-focused."

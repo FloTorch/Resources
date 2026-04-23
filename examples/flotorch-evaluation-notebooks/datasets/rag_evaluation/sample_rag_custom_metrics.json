@@ -1,0 +1,12 @@
+{
+  "samples": [
+    {
+      "user_input": "What is RAG?",
+      "llm_response": "RAG combines retrieval and generation to ground answers.",
+      "contexts": [
+        "RAG combines retrieval with generation for grounded responses."
+      ],
+      "ground_truth": "Retrieval-Augmented Generation"
+    }
+  ]
+}

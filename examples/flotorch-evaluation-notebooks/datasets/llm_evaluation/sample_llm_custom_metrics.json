@@ -1,0 +1,12 @@
+{
+  "samples": [
+    {
+      "user_input": "Help?",
+      "llm_response": "Please let me help. Thank you for asking."
+    },
+    {
+      "user_input": "What?",
+      "llm_response": "No idea."
+    }
+  ]
+}

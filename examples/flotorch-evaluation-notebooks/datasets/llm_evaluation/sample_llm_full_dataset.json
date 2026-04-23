@@ -1,0 +1,14 @@
+{
+  "samples": [
+    {
+      "user_input": "What is Python?",
+      "llm_response": "Python is a programming language.",
+      "ground_truth": "A programming language"
+    },
+    {
+      "user_input": "What is RAG?",
+      "llm_response": "RAG stands for Retrieval-Augmented Generation.",
+      "ground_truth": "Retrieval-Augmented Generation"
+    }
+  ]
+}

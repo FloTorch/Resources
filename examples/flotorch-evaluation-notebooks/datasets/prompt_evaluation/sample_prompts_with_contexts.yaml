@@ -1,0 +1,7 @@
+prompts:
+  "1":
+    template: "Answer using only the provided context. Cite which parts you use."
+  "2":
+    template: "Summarize the provided context to answer the question."
+  "3":
+    template: "Answer the question based on the context. Be concise and accurate."

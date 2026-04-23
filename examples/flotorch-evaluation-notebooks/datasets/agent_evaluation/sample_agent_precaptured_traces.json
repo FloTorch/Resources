@@ -1,0 +1,30 @@
+{
+  "samples": [
+    {
+      "user_input": "Find weather for Paris and summarize.",
+      "reference_outcome": "A concise weather summary for Paris.",
+      "trace": {
+        "messages": [
+          {
+            "role": "human",
+            "content": "Find weather for Paris and summarize."
+          },
+          {
+            "role": "ai",
+            "content": "I will check weather first."
+          },
+          {
+            "role": "tool",
+            "content": "Paris: 18C, light rain",
+            "tool_name": "weather_lookup"
+          },
+          {
+            "role": "ai",
+            "content": "Paris is 18C with light rain today."
+          }
+        ],
+        "final_response": "Paris is 18C with light rain today."
+      }
+    }
+  ]
+}

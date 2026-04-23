@@ -1,0 +1,24 @@
+{
+  "samples": [
+    {
+      "user_input": "What is 15 * 7 + 3? Use the calculator.",
+      "reference_outcome": "Uses calculator, returns 108",
+      "reference_tool_calls": [
+        {
+          "name": "calculator",
+          "args": { "expression": "15 * 7 + 3" }
+        }
+      ]
+    },
+    {
+      "user_input": "What's the weather in Paris?",
+      "reference_outcome": "Uses get_weather",
+      "reference_tool_calls": [
+        {
+          "name": "get_weather",
+          "args": { "city": "Paris" }
+        }
+      ]
+    }
+  ]
+}

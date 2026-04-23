@@ -1,0 +1,8 @@
+{
+  "samples": [
+    {
+      "user_input": "Customer is upset about a delayed order.",
+      "prompt_ids": ["1", "2", "3"]
+    }
+  ]
+}
