@@ -1,0 +1,12 @@
+{
+  "samples": [
+    {
+      "user_input": "What is the capital of France?",
+      "prompt_ids": ["1", "2", "3"]
+    },
+    {
+      "user_input": "What is RAG in machine learning?",
+      "prompt_ids": ["1", "2", "3"]
+    }
+  ]
+}

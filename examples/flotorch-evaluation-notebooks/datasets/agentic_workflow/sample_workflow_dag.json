@@ -1,0 +1,42 @@
+{
+  "uid": "sequential-workflow-001",
+  "name": "Sequential Workflow",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START",
+      "label": "Start"
+    },
+    {
+      "id": "agent1",
+      "type": "AGENT",
+      "label": "Agent 1",
+      "callableName": "agent1:latest"
+    },
+    {
+      "id": "agent2",
+      "type": "AGENT",
+      "label": "Agent 2",
+      "callableName": "agent2:latest"
+    },
+    {
+      "id": "end",
+      "type": "END",
+      "label": "End"
+    }
+  ],
+  "edges": [
+    {
+      "sourceNodeId": "start",
+      "targetNodeId": "agent1"
+    },
+    {
+      "sourceNodeId": "agent1",
+      "targetNodeId": "agent2"
+    },
+    {
+      "sourceNodeId": "agent2",
+      "targetNodeId": "end"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+prompts:
+  "1":
+    template: "Answer the question directly and concisely."
+  "2":
+    template: "Answer the question with a brief explanation of your reasoning."
+  "3":
+    template: "Answer the question in a structured format with numbered points."

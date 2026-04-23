@@ -1,0 +1,11 @@
+{
+  "samples": [
+    {
+      "user_input": "What is RAG?",
+      "contexts": [
+        "RAG combines document retrieval with language generation."
+      ],
+      "prompt_ids": ["1", "2", "3"]
+    }
+  ]
+}

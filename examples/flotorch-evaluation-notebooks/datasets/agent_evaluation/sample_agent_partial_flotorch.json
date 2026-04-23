@@ -1,0 +1,9 @@
+{
+  "samples": [
+    {
+      "user_input": "What is the weather in Tokyo?",
+      "reference_outcome": "Provides Tokyo weather",
+      "reference_tool_calls": [{ "name": "search_tool", "args": {} }]
+    }
+  ]
+}

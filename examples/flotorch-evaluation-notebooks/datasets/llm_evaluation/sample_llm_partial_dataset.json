@@ -1,0 +1,6 @@
+{
+  "samples": [
+    { "user_input": "What is Python?" },
+    { "user_input": "What is RAG?" }
+  ]
+}
